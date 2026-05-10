@@ -141,30 +141,14 @@ class BirthdayWebsite {
             });
         }, observerOptions);
 
-        // Observa elementos para animação
-        document.querySelectorAll('.photo-section').forEach(section => {
+        // Observa elementos principais
+        document.querySelectorAll('.photo-section, .final-section').forEach(section => {
             observer.observe(section);
-        });
-
-        document.querySelectorAll('.photo').forEach(photo => {
-            observer.observe(photo);
-        });
-
-        document.querySelectorAll('.text-declaration').forEach(text => {
-            observer.observe(text);
-        });
-
-        document.querySelectorAll('.final-section').forEach(section => {
-            observer.observe(section);
-        });
-
-        document.querySelectorAll('.birthday-letter').forEach(letter => {
-            observer.observe(letter);
         });
     }
 
     animateElement(element) {
-        element.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        element.classList.add('is-visible');
     }
 
     /* ====================================
@@ -243,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa parallax suave (comentar se causar lag)
     // const parallax = new SmoothParallax();
 
-    // Inicializa reveal de texto
-    const textReveal = new TextReveal();
+    // Inicializa reveal de texto (removido para evitar conflitos)
+    // const textReveal = new TextReveal();
 
     // Log inicial
     console.log('🎉 Site de aniversário carregado com sucesso!');
